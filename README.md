@@ -1,9 +1,37 @@
-# Orpheus TTS
+# Orpheus-TTS (Kazakh Fine-Tuning)
 
-#### Updates 🔥
-- [5/2025] We've partnered with [Baseten](https://www.baseten.co/blog/canopy-labs-selects-baseten-as-preferred-inference-provider-for-orpheus-tts-model) to bring highly optimized inference to Orpheus at fp8 (more performant) and fp16 (full fidelity) inference. See code and docs [here](/additional_inference_options/baseten_inference_example/README.md).
+🎙️ This is a Kazakh-adapted version of [Orpheus-TTS](https://github.com/Orpheus-TTS/Orpheus-TTS), a powerful open-source speech synthesis system based on large language models.
 
-- [4/2025] We release a [family of multilingual models](https://huggingface.co/collections/canopylabs/orpheus-multilingual-research-release-67f5894cd16794db163786ba) in a research preview. We release a [training guide](https://canopylabs.ai/releases/orpheus_can_speak_any_language#training) that explains how we created these models in the hopes that even better versions in both the languages released and new languages are created. We welcome feedback and criticism as well as invite questions in this [discussion](https://github.com/canopyai/Orpheus-TTS/discussions/123) for feedback and questions.
+## 🇰🇿 Goal
+
+To fine-tune Orpheus-TTS on high-quality Kazakh speech datasets for:
+- better voice synthesis in Kazakh
+- use in educational and accessibility tools
+- research in low-resource TTS
+
+## 🛠 Changes from Original
+
+- Tokenizer adapted for Kazakh graphemes/phonemes  
+- Kazakh audio/text datasets integrated (flac + text)  
+- Fine-tuning scripts adjusted  
+- Evaluation pipeline localized  
+
+## 🔄 Status
+
+> ✅ Dataset: prepared  
+> 🔄 Fine-tuning: in progress  
+> ⏳ Demo: coming soon  
+
+## 📄 License
+
+Apache 2.0 (same as original)  
+This repo retains full attribution to [Orpheus-TTS](https://github.com/Orpheus-TTS/Orpheus-TTS)
+
+## 👨‍💻 Authors
+
+- [Beibit Baktygaliyev] (https://github.com/Beibit-ds)
+- [Adilet Amangossov](https://github.com/adiletamangossov)
+- Based on work by Orpheus-TTS contributors
 
 ## Overview
 Orpheus TTS is a SOTA open-source text-to-speech system built on the Llama-3b backbone. Orpheus demonstrates the emergent capabilities of using LLMs for speech synthesis.
