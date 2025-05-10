@@ -29,9 +29,10 @@ This repo retains full attribution to [Orpheus-TTS](https://github.com/Orpheus-T
 
 ## 👨‍💻 Authors
 
-- [Beibit Baktygaliyev] (https://github.com/Beibit-ds)
+- [Beibit Baktygaliyev](https://github.com/Beibit-ds)
 - [Adilet Amangossov](https://github.com/adiletamangossov)
 - Based on work by Orpheus-TTS contributors
+
 
 ## Overview
 Orpheus TTS is a SOTA open-source text-to-speech system built on the Llama-3b backbone. Orpheus demonstrates the emergent capabilities of using LLMs for speech synthesis.
