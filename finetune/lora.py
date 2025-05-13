@@ -43,7 +43,36 @@ lora_config = LoraConfig(
 
 model = get_peft_model(model, lora_config)
 
-ds = load_dataset(dsn, split="train") 
+MAX_LEN = 2048
+
+def split_long_rows_batch(batch):
+    out_input_ids, out_labels, out_masks = [], [], []
+    for ids in batch["input_ids"]:
+        for i in range(0, len(ids), MAX_LEN):
+            chunk = ids[i : i + MAX_LEN]
+            if chunk:
+                out_input_ids.append(chunk)
+                out_labels.append(chunk)
+                out_masks.append([1] * len(chunk))
+    return {
+        "input_ids":      out_input_ids,
+        "labels":         out_labels,
+        "attention_mask": out_masks,
+    }
+
+raw_ds = load_dataset(
+    dsn,
+    split="train",
+    streaming=False,
+)
+
+ds = raw_ds.map(
+    split_long_rows_batch,
+    batched=True,
+    batch_size=1000,
+    num_proc=4,
+    remove_columns=raw_ds.column_names,
+)
 
 wandb.init(project=project_name, name = run_name)
 
